@@ -1,4 +1,4 @@
-# Task Tracker Web App
+## Task Tracker Web App
 
 ## Hey there! Welcome to the Task Tracker!
 
@@ -20,7 +20,7 @@ Whether you're just starting your programming journey or you've been coding for 
 Start by getting the project on your local machine. Open up your terminal and clone it with Git:
 
 ```bash
-git clone https://github.com/your-username/task-tracker.git
+git clone https://github.com/androkingdom/task-tracker.git
 ```
 
 ### Step 2: Open the Project
@@ -190,7 +190,11 @@ const deleteTask = (taskKey) => {
 
 ## Project URL
 You can check out the live version of the app here:  
-[Live Project on GitHub](https://github.com/your-username/task-tracker)
+[Live Project on GitHub](https://github.com/androkingdom/task-tracker)
+
+## Project Roadmap
+Check out the development roadmap for the project:  
+[Task Tracker Roadmap](https://roadmap.sh/projects/task-tracker-js)
 
 ---
 
