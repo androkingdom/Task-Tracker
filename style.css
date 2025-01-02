@@ -1,0 +1,303 @@
+/* General Reset for all elements to ensure consistent styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  /* Ensures padding and borders don't affect the width/height */
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* Sets the font for all text */
+}
+
+/* Main wrapper for the layout */
+.wrapper {
+    display: flex;
+    gap: 10px;  /* Spacing between flex items */
+    align-items: center;  /* Vertically center items */
+    flex-direction: column;  /* Align items in a column */
+    height: 100vh;  /* Full viewport height */
+}
+
+/* Body styling */
+body {
+    background-color: #1b1b1b;  /* Dark background color */
+    color: white;  /* White text color for contrast */
+}
+
+/* Navigation styling */
+nav {
+    display: block;  /* Block display for nav */
+}
+
+/* Header section */
+header {
+    height: 10vh;  /* 10% of the viewport height */
+    display: flex;
+    flex-direction: column;  /* Arrange items in a column */
+}
+
+/* Main section for task list */
+main {
+    height: 70vh;  /* 70% of the viewport height */
+    overflow-x: hidden;  /* Hide horizontal scrollbar */
+    overflow-y: auto;  /* Enable vertical scrollbar */
+}
+
+/* Footer section */
+footer {
+    display: flex;
+    align-items: center;  /* Center items vertically */
+    justify-content: end;  /* Align content to the right */
+    height: 20vh;  /* 20% of the viewport height */
+    width: 100%;  /* Full width */
+    overflow: hidden;
+}
+
+/* Logo styling */
+.logo {
+    text-align: center;
+    margin: 5px;
+}
+
+/* Feedback message styling */
+.feedback {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    left: 43%;  /* Center the feedback box */
+    visibility: hidden;  /* Hidden by default */
+    opacity: 0;  /* Fully transparent */
+    height: 50px;
+    width: 100px;
+    top: 5%;
+    padding: 3px;
+    font-size: small;
+    box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.6);  /* Box shadow for depth */
+    transition: all ease-in-out .5s;  /* Smooth transition */
+}
+
+/* Feedback box visibility when active */
+.feedback.show {
+    visibility: visible;  /* Makes the feedback visible */
+    background-color: #b1b1b1;  /* Light grey background */
+    opacity: 1;  /* Full opacity */
+}
+
+/* Error and success feedback types */
+.feedback.error {
+    background-color: red;  /* Red background for errors */
+}
+.feedback.success {
+    background-color: rgb(59, 176, 59);  /* Green background for success */
+}
+
+/* Task list container */
+.menu {
+    width: 250px;  /* Fixed width */
+    display: flex;
+    flex-direction: column;  /* Vertical list of tasks */
+    gap: 5px;  /* Space between items */
+    padding: 5px;
+}
+
+/* Individual task item styling */
+.task {
+    margin-bottom: 4px;  /* Bottom margin */
+    display: flex;
+    align-items: center;  /* Center task content vertically */
+    justify-content: space-between;  /* Space between task content */
+    gap: 5px;  /* Space between elements inside task */
+    background-color: rgb(44, 44, 44);  /* Dark grey background */
+    box-shadow: 4px 5px 5px 0px rgba(0,0,0,0.6);  /* Shadow for depth */
+    border-radius: 5px;  /* Rounded corners */
+    padding: 5px;
+    transition: background-color 0.3s ease;  /* Smooth hover effect */
+}
+
+/* Hover effect for tasks */
+.task:hover {
+    background-color: rgb(60, 60, 60);  /* Darker grey on hover */
+    box-shadow: 4px 5px 5px 0px rgba(10, 10, 10, 0.6);  /* Darker shadow */
+}
+
+/* Styling for task content */
+.task div {
+    color: white;  /* White text */
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+/* Task completion style (cross out text) */
+.task-info.complete {
+    text-decoration: line-through;  /* Strikethrough text */
+    color: grey;  /* Grey color for completed tasks */
+    transition: all 0.3s ease-in-out;  /* Smooth transition */
+}
+
+/* Button styling */
+input[type="button"] {
+    cursor: pointer;  /* Pointer cursor */
+    color: white;  /* White text color */
+    border: none;
+    background-color: red;  /* Red background */
+    padding: 5px;
+    border-radius: 5px;  /* Rounded corners */
+}
+
+/* Button hover effect */
+input[type="button"]:hover {
+    opacity: 0.8;  /* Slightly dimmed on hover */
+}
+
+/* Specific button for saving task */
+input[value="save"] {
+    background-color: rgb(2, 198, 2);  /* Green background for save button */
+}
+
+/* Checkbox styling */
+.check-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+}
+
+.check-box input[type="checkbox"] {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    display: inline-block;  /* Respects width and height */
+    box-sizing: border-box;
+    appearance: none;  /* Removes default styling */
+    border: 1.5px solid #737a7e;  /* Grey border */
+    border-radius: 3px;
+    outline: none;  /* Removes outline */
+    transition: all ease-in-out 0.1s;  /* Smooth transition for hover effect */
+    background-color: transparent;  /* Transparent background */
+}
+
+/* Checkbox checked style */
+input[type="checkbox"]:not(:disabled):checked, input[type="checkbox"].complete {
+    background: rgb(76, 77, 78);  /* Dark background when checked */
+}
+
+/* Checkbox hover effect */
+input[type="checkbox"]:not(:disabled):hover {
+    opacity: .5;  /* Dimmed effect on hover */
+}
+
+/* Span text inside checkbox */
+.check-box span {
+    font-size: 16px;
+    display: block;
+    user-select: none;  /* Prevent text selection */
+    line-height: 1.5;
+    cursor: pointer;  /* Pointer cursor */
+}
+
+/* Input field for new task styling */
+#new-task {
+    padding: 5px;
+    border: none;
+    border-radius: 8px;  /* Rounded corners */
+    background-color: #1e1e1e;  /* Dark background */
+    color: white;  /* White text */
+}
+
+/* Add button container styling */
+.add {
+    height: 60px;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: absolute;
+    margin: 4px;
+}
+
+/* Add button specific styling */
+.add input[type="button"] {
+    padding: 0;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;  /* Circular button */
+    background-color: rgb(44, 44, 44);  /* Dark background */
+    font-size: larger;
+    font-weight: 300;
+    border: none;
+    text-align: center;
+    transition: all linear 250ms;  /* Smooth scale transition */
+}
+
+/* Hover effect for add button */
+.add input[type="button"]:hover {
+    transform: scale(1.1);  /* Button enlarges on hover */
+}
+
+/* Add task button styling */
+.add-task input[type="button"] {
+    height: 30px;
+    width: 70px;
+}
+
+/* Add task form container */
+.add-task {
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.6);
+    background-color: rgb(57, 58, 59);  /* Dark grey background */
+    height: 150px;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    border-radius: 7px;  /* Rounded corners */
+    align-items: center;
+    flex-direction: column;  /* Center content in a column */
+    position: absolute;
+    left: 50%;  /* Center horizontally */
+    transform: translateX(-50%);  /* Adjust for exact center */
+    top: -200px;  /* Initially off-screen */
+    gap: 10px;
+    visibility: hidden;  /* Hidden by default */
+    opacity: 1;  /* Full opacity */
+    transition: all cubic-bezier(0.68, -0.55, 0.265, 1.55) 500ms;  /* Smooth show/hide transition */
+}
+
+/* Button container inside the add task form */
+.add-task-btn {
+    display: flex;
+    gap: 10px;
+}
+
+/* Show add task form */
+.add-task.show {
+    top: 26vh;  /* Positioned inside the viewport */
+    visibility: visible;  /* Visible */
+    opacity: 1;  /* Fully opaque */
+}
+
+/* Add button rotates when open */
+.add input[value="+"].close {
+    transform: rotateZ(45deg);  /* Rotate button */
+    margin: 0;
+    padding: 0;
+}
+
+/* Custom Scrollbar Styling */
+main::-webkit-scrollbar {
+    width: 10px;  /* Width of the scrollbar */
+}
+
+main::-webkit-scrollbar-track {
+    background: transparent;  /* Transparent background for track */
+}
+
+main::-webkit-scrollbar-thumb {
+    background: #373a3e;  /* Dark color for the scrollbar thumb */
+    border-radius: 5px;  /* Rounded thumb corners */
+}
+
+main::-webkit-scrollbar-thumb:hover {
+    background: #24292c;  /* Darker color when hovered */
+}
