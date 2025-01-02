@@ -110,6 +110,7 @@ const toggelAddTask = () => {
     newTaskInfo.value = ''; // Clear the input field
     newTaskContainer.classList.toggle("show"); // Toggle visibility of the form
     document.querySelector(".add input").classList.toggle("close"); // Toggle the "+" button state
+    newTaskInfo.focus();
     saveNewTask(); // Set up the event listener for saving the task
 };
 
