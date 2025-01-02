@@ -61,9 +61,10 @@ footer {
     position: absolute;
     display: flex;
     align-items: center;
+    border-radius: 5px;
     justify-content: center;
     text-align: center;
-    left: 43%;  /* Center the feedback box */
+    left: 50%;  /* Center the feedback box */
     visibility: hidden;  /* Hidden by default */
     opacity: 0;  /* Fully transparent */
     height: 50px;
