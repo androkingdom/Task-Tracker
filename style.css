@@ -209,14 +209,16 @@ input[type="checkbox"]:not(:disabled):hover {
 
 /* Add button container styling */
 .add {
-    height: 60px;
-    width: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    position: absolute;
-    margin: 4px;
+    padding: 0;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;  /* Circular button */
+    background-color: rgb(44, 44, 44);  /* Dark background */
+    font-size: larger;
+    font-weight: 300;
+    border: none;
+    text-align: center;
+    transition: all linear 250ms;  /* Smooth scale transition */
 }
 
 /* Add button specific styling */
@@ -231,11 +233,6 @@ input[type="checkbox"]:not(:disabled):hover {
     border: none;
     text-align: center;
     transition: all linear 250ms;  /* Smooth scale transition */
-}
-
-/* Hover effect for add button */
-.add input[type="button"]:hover {
-    transform: scale(1.1);  /* Button enlarges on hover */
 }
 
 /* Add task button styling */
