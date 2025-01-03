@@ -190,7 +190,7 @@ const deleteTask = (taskKey) => {
 
 ## Project URL
 You can check out the live version of the app here:  
-[Live Project on GitHub](https://github.com/androkingdom/task-tracker)
+[Live Project on GitHub](https://androkingdom.github.io/Task-Tracker/)
 
 ## Project Roadmap
 Check out the development roadmap for the project:  
