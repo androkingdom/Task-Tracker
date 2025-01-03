@@ -3,7 +3,7 @@ const AppKey = "041TaskTraker";
 
 // Selecting DOM elements for the task creation and management
 const newTaskContainer = document.querySelector(".add-task");
-const addBtn = document.querySelector(".add input");
+const addBtn = document.querySelector(".add button");
 const saveTaskBtn = document.querySelector('.add-task-btn');
 const newTaskInfo = document.getElementById('new-task');
 const taskMenu = document.getElementsByClassName("menu")[0];
@@ -109,7 +109,7 @@ const updateTaskCompletion = (id) => {
 const toggelAddTask = () => {
     newTaskInfo.value = ''; // Clear the input field
     newTaskContainer.classList.toggle("show"); // Toggle visibility of the form
-    document.querySelector(".add input").classList.toggle("close"); // Toggle the "+" button state
+    addBtn.classList.toggle("close"); // Toggle the "+" button state
     saveNewTask(); // Set up the event listener for saving the task
 };
 

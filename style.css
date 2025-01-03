@@ -225,7 +225,10 @@ input[type="checkbox"]:not(:disabled):hover {
 }
 
 /* Add button specific styling */
-.add input[type="button"] {
+.add button {
+    outline: none;
+    border: none;
+    color: white;
     width: inherit;
     text-align: center;
     font-size: larger;
@@ -235,11 +238,12 @@ input[type="checkbox"]:not(:disabled):hover {
     transition: all linear 250ms;  /* Smooth scale transition */
 }
 
-.add input[type="button"]:focus {
-    outline: none;
-    box-shadow: none;
+/* Add button rotates when open */
+.add button.close {
+    transform: rotateZ(45deg);  /* Rotate button */
+    margin: 0;
+    padding: 0;
 }
-
 /* Add task button styling */
 .add-task input[type="button"] {
     height: 30px;
@@ -278,13 +282,6 @@ input[type="checkbox"]:not(:disabled):hover {
     top: 26vh;  /* Positioned inside the viewport */
     visibility: visible;  /* Visible */
     opacity: 1;  /* Fully opacity*/
-}
-
-/* Add button rotates when open */
-.add input[value="+"].close {
-    transform: rotateZ(45deg);  /* Rotate button */
-    margin: 0;
-    padding: 0;
 }
 
 /* Custom Scrollbar Styling */
