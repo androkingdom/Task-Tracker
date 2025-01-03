@@ -214,24 +214,24 @@ input[type="checkbox"]:not(:disabled):hover {
     width: 50px;
     border-radius: 50%;  /* Circular button */
     background-color: rgb(44, 44, 44);  /* Dark background */
-    font-size: larger;
-    font-weight: 300;
     border: none;
-    text-align: center;
-    transition: all linear 250ms;  /* Smooth scale transition */
+    display: flex;
+    justify-content: center;
+    transition: all cubic-bezier(0.445, 0.05, 0.55, 0.95) 100ms;  /* Smooth scale transition */
+}
+
+.add:hover {
+    transform: scale(1.1);
 }
 
 /* Add button specific styling */
 .add input[type="button"] {
-    padding: 0;
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;  /* Circular button */
-    background-color: rgb(44, 44, 44);  /* Dark background */
+    width: inherit;
+    text-align: center;
     font-size: larger;
     font-weight: 300;
-    border: none;
-    text-align: center;
+    border-radius: 50%;  /* Circular button */
+    background-color: rgb(44, 44, 44);  /* Dark background */
     transition: all linear 250ms;  /* Smooth scale transition */
 }
 
@@ -258,7 +258,7 @@ input[type="checkbox"]:not(:disabled):hover {
     top: -200px;  /* Initially off-screen */
     gap: 10px;
     visibility: hidden;  /* Hidden by default */
-    opacity: 1;  /* Full opacity */
+    opacity: 0;  /* Full opaque*/
     transition: all cubic-bezier(0.68, -0.55, 0.265, 1.55) 500ms;  /* Smooth show/hide transition */
 }
 
@@ -272,7 +272,7 @@ input[type="checkbox"]:not(:disabled):hover {
 .add-task.show {
     top: 26vh;  /* Positioned inside the viewport */
     visibility: visible;  /* Visible */
-    opacity: 1;  /* Fully opaque */
+    opacity: 1;  /* Fully opacity*/
 }
 
 /* Add button rotates when open */
